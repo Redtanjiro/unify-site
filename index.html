@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Unify — Events &amp; Experiences</title>
+<meta name="description" content="Unify designs and hosts weddings, celebrations and brand gatherings with heritage warmth and quiet precision.">
+<link rel="icon" href="assets/logo/unify-monogram.svg" type="image/svg+xml">
+<link rel="preload" href="assets/video/jaipur-poster.jpg" as="image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,200;0,300;0,400;1,300&family=Noto+Serif:wght@300;400&display=swap">
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<!-- Invitation -->
+<div class="intro" id="intro" role="dialog" aria-label="Unify invitation">
+  <button class="skip" id="skip">Skip</button>
+  <div class="stage">
+    <div class="env" id="env">
+      <div class="env-back"></div>
+      <div class="card" id="card"><div class="card-inner"><i class="mono"></i><span>UNIFY</span></div></div>
+      <div class="env-front">
+        <svg viewBox="0 0 100 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70 L50 37.8 L100 70" fill="none" stroke="rgba(110,31,42,.10)" stroke-width=".25" vector-effect="non-scaling-stroke"/></svg>
+      </div>
+      <div class="flap" id="flap">
+        <div class="flap-face"></div>
+        <svg class="flap-line" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 L50 100 L100 0" fill="none" stroke="rgba(110,31,42,.22)" stroke-width="1" vector-effect="non-scaling-stroke"/><path d="M6 3 L50 91 L94 3" fill="none" stroke="rgba(201,154,74,.55)" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>
+        <div class="flap-in"></div>
+        <div class="seal seal-top"><i class="mono"></i></div>
+      </div>
+      <div class="seal seal-bot"><i class="mono"></i></div>
+      <button class="seal-btn" id="sealBtn" aria-label="Break the seal and open the invitation"></button>
+    </div>
+    <div class="hint" id="hint">
+      <span class="label">You are invited</span>
+      <small>Break the seal to enter</small>
+    </div>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <a class="home-mark" href="#home" aria-label="Unify home"><i class="mono"></i></a>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+  <nav class="links" id="navLinks">
+    <a href="#about">About</a>
+    <a href="#experiences">Experiences</a>
+    <a href="#enquire">Enquire</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="hero">
+  <video id="vidA" muted playsinline loop preload="auto" poster="assets/video/jaipur-poster.jpg" src="assets/video/jaipur.mp4"></video>
+  <h1 class="hw hw-l">Unify</h1>
+  <p class="hw hw-r">Events &amp; Experiences</p>
+</section>
+
+<div class="sheet" id="sheet">
+<div class="seal sheet-seal" aria-hidden="true"><i class="mono"></i></div>
+<div class="sheet-head">
+  <span class="label">The invitation</span>
+  <h2>Every celebration,<br>gathered as one</h2>
+</div>
+<div class="invite" id="invite">
+<!-- HOME -->
+<div class="view" id="v-home">
+  <div class="wrap">
+  <section class="band statement">
+    <i class="mono orn" aria-hidden="true"></i>
+    <p class="big">A wedding is many families becoming one. We hold every thread of it, from the first ritual to the last farewell, so that no guest is ever a stranger.</p>
+    <a class="link" href="#about">Our story <span class="ar">→</span></a>
+  </section>
+
+  <section class="band split">
+    <div style="display:grid;gap:18px"><span class="label">Experiences</span><h2 class="h2">Three ways we gather people</h2></div>
+    <div class="list">
+      <a class="row" href="#experiences"><span class="n">I</span><div><h3>Weddings</h3><p>Multi‑day celebrations, from sangeet to vidaai, planned for families and guests travelling from afar.</p></div><span class="link"><span class="ar">→</span></span></a>
+      <a class="row" href="#experiences"><span class="n">II</span><div><h3>Celebrations</h3><p>Engagements, anniversaries and milestone evenings, set with the same care as the day itself.</p></div><span class="link"><span class="ar">→</span></span></a>
+      <a class="row" href="#experiences"><span class="n">III</span><div><h3>Brand &amp; corporate</h3><p>Launches, retreats and gatherings where a company wants its people to feel like guests.</p></div><span class="link"><span class="ar">→</span></span></a>
+    </div>
+  </section>
+
+  <section class="band">
+    <div style="display:grid;gap:18px;max-width:640px"><span class="label">How we work</span><h2 class="h2">From first conversation to final farewell</h2></div>
+    <div class="steps">
+      <div class="step"><span class="label">01</span><h3>Listen</h3><p>We learn your families, your rituals and what the day must hold.</p></div>
+      <div class="step"><span class="label">02</span><h3>Compose</h3><p>One design, one plan, one budget, laid out before anything is booked.</p></div>
+      <div class="step"><span class="label">03</span><h3>Orchestrate</h3><p>Venues, vendors, travel and guests, managed from a single desk.</p></div>
+      <div class="step"><span class="label">04</span><h3>Host</h3><p>On the day, our team runs every moment so you can be present in it.</p></div>
+    </div>
+  </section>
+
+  <section class="band" style="padding-top:0">
+    <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap">
+      <div style="display:grid;gap:18px"><span class="label">Selected work</span><h2 class="h2">Gatherings we have held</h2></div>
+      <a class="link" href="#portfolio">View the portfolio <span class="ar">→</span></a>
+    </div>
+    <div class="plates">
+      <div class="plate p1"><span class="tag">Wedding · photo to come</span></div>
+      <div class="plate p2"><span class="tag">Sangeet · photo to come</span></div>
+      <div class="plate p3"><span class="tag">Reception · photo to come</span></div>
+      <div class="plate p4"><span class="tag">Brand evening · photo to come</span></div>
+    </div>
+  </section>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="view" id="v-about"><div class="wrap">
+  <section class="page-head">
+    <span class="label">About</span>
+    <h1>The art of bringing people together</h1>
+    <p>Unify is an events and experiences house. We pair the warmth of ceremony with the calm of a team that has thought of everything.</p>
+  </section>
+  <section class="band cols2" style="padding-top:0">
+    <div class="prose">
+      <p>Our name is our promise. The monogram joins U, n and Y beneath a single star: separate letters, one mark. That is what a celebration asks of its families, and what we ask of ourselves.</p>
+      <p>We work for couples and families planning from near and far, who want the day to feel rooted in tradition and still run like clockwork.</p>
+    </div>
+    <div class="plate" style="aspect-ratio:4/5"><span class="tag">Founders · photo to come</span></div>
+  </section>
+  <section class="band values">
+    <div><h3>Warmth</h3><p>Every guest is welcomed like family, from the airport to the mandap.</p></div>
+    <div><h3>Certainty</h3><p>One plan, one point of contact, and nothing left to chance.</p></div>
+    <div><h3>Craft</h3><p>Florals, light and detail, considered as carefully as the guest list.</p></div>
+  </section>
+</div></div>
+
+<!-- EXPERIENCES -->
+<div class="view" id="v-experiences"><div class="wrap">
+  <section class="page-head">
+    <span class="label">Experiences</span>
+    <h1>Composed for every occasion</h1>
+    <p>Each experience is planned as a whole, so the details speak to one another and the day reads as one story.</p>
+  </section>
+  <section class="band" style="padding-top:0">
+    <div class="list">
+      <div class="row"><span class="n">I</span><div><h3>Weddings</h3><p>Full planning for multi‑day weddings: venues, décor, rituals, guest travel, hospitality and the run of show.</p></div><a class="link" href="#enquire">Enquire <span class="ar">→</span></a></div>
+      <div class="row"><span class="n">II</span><div><h3>Destination weddings</h3><p>For families bringing guests from overseas: arrivals, stays, transfers and a welcome desk that never closes.</p></div><a class="link" href="#enquire">Enquire <span class="ar">→</span></a></div>
+      <div class="row"><span class="n">III</span><div><h3>Celebrations</h3><p>Engagements, anniversaries and private evenings, designed at the scale they deserve.</p></div><a class="link" href="#enquire">Enquire <span class="ar">→</span></a></div>
+      <div class="row"><span class="n">IV</span><div><h3>Brand &amp; corporate</h3><p>Launches, offsites and hosted dinners with the polish of a private celebration.</p></div><a class="link" href="#enquire">Enquire <span class="ar">→</span></a></div>
+    </div>
+  </section>
+</div></div>
+
+<!-- PORTFOLIO -->
+<div class="view" id="v-portfolio"><div class="wrap">
+  <section class="page-head">
+    <span class="label">Portfolio</span>
+    <h1>Gatherings we have held</h1>
+    <p>A selection of celebrations. Photography will replace these plates.</p>
+  </section>
+  <section class="plates" style="margin-top:0;padding-bottom:120px">
+    <div class="plate p1"><span class="tag">Wedding · 3 days</span></div>
+    <div class="plate p2"><span class="tag">Mehendi</span></div>
+    <div class="plate p3"><span class="tag">Haldi</span></div>
+    <div class="plate p4"><span class="tag">Reception</span></div>
+  </section>
+</div></div>
+
+<!-- ENQUIRE -->
+<div class="view" id="v-enquire"><div class="wrap">
+  <section class="page-head">
+    <span class="label">Enquire</span>
+    <h1>Tell us about your celebration</h1>
+    <p>Share a few details and we will reply within two working days to arrange a first conversation.</p>
+  </section>
+  <section class="band cols2" style="padding-top:0">
+    <form class="enq" id="enqForm" novalidate>
+      <label>Your name<input id="f-name" name="name" autocomplete="name" required></label>
+      <label>Email<input id="f-email" name="email" type="email" autocomplete="email" required></label>
+      <label>Occasion<select id="f-occ" name="occasion"><option>Wedding</option><option>Destination wedding</option><option>Celebration</option><option>Brand &amp; corporate</option></select></label>
+      <label>Approximate date<input id="f-date" name="date" placeholder="Month and year"></label>
+      <label>Guests<input id="f-guests" name="guests" inputmode="numeric" placeholder="e.g. 250"></label>
+      <label>Location<input id="f-loc" name="location" placeholder="City or region"></label>
+      <label class="full">What should we know?<textarea id="f-msg" name="message" rows="4"></textarea></label>
+      <button type="submit" class="link full">Send enquiry <span class="ar">→</span></button>
+      <p class="note full" id="formNote" role="status"></p>
+    </form>
+    <div class="plate" style="aspect-ratio:4/5"><span class="tag">Studio · photo to come</span></div>
+  </section>
+</div></div>
+
+<section class="cta-band" id="ctaBand"><div class="inner wrap">
+  <span class="label">Now planning 2027</span>
+  <h2>Let us begin with a conversation</h2>
+  <p>Tell us who is gathering, where, and when. We will take it from there.</p>
+  <a class="link" href="#enquire">Begin an enquiry <span class="ar">→</span></a>
+</div></section>
+</div><!-- /invite -->
+
+<footer><div class="inner wrap">
+  <div style="display:grid;gap:18px;align-content:start">
+    <img src="assets/logo/unify-lockup.svg" alt="Unify Events &amp; Experiences" style="width:150px">
+  </div>
+  <div><h4>Visit</h4><ul><li><a href="#about">About</a></li><li><a href="#experiences">Experiences</a></li><li><a href="#portfolio">Portfolio</a></li></ul></div>
+  <div><h4>Contact</h4><ul><li><a href="#enquire">Enquire</a></li><li>hello@unify.example</li></ul></div>
+  <div><h4>Invitation</h4><ul><li><button id="replay">Open the invitation again</button></li></ul></div>
+  <div class="legal"><span>© 2026 Unify Events &amp; Experiences</span><span class="draft">Prototype · draft copy · film: Jal Mahal, Jaipur</span></div>
+</div></footer>
+</div><!-- /sheet -->
+</main>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
