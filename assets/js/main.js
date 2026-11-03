@@ -18,15 +18,23 @@ fetch(MONO).then(r => r.ok ? r.text() : Promise.reject()).then(txt => {
   document.querySelectorAll('.mono').forEach(el => { el.innerHTML = '<img alt="" src="assets/logo/unify-monogram-ivory.svg">'; });
 });
 
-/* ── Hero film: two clips cross-fade in a loop ── */
-const vids = [$('vidA')]; let cur = 0;
+/* ── Hero film: three clips cross-fade in a loop (Jal Mahal → village → fields) ── */
+const vids = [$('vidA'), $('vidB'), $('vidC')]; let cur = 0, z = 1, fading = false;
+const XF = 1.6;                                   // cross-fade length in seconds, matches .hero video transition
 function playClip(i){
   const v = vids[i];
   const p = v.play(); if (p && p.catch) p.catch(()=>{});
-  v.classList.add('on'); cur = i;
+  v.style.zIndex = ++z; v.classList.add('on'); cur = i;
 }
+// Near the end of each clip, start the next one on top and fade it in; the old clip stays lit underneath until it is covered
+vids.forEach((v, i) => v.addEventListener('timeupdate', () => {
+  if (i !== cur || fading || !v.duration || v.currentTime < v.duration - XF) return;
+  fading = true;
+  const n = (i + 1) % vids.length; vids[n].currentTime = 0; playClip(n);
+  setTimeout(() => { v.classList.remove('on'); v.pause(); fading = false; }, XF * 1000);
+}));
 vids[0].classList.add('on');
-vids.forEach(v => v.addEventListener('error', () => { $('hero').style.background = '#1d1411 url(assets/video/jaipur-poster.jpg) center/cover'; }));
+vids[0].addEventListener('error', () => { $('hero').style.background = '#1d1411 url(assets/video/jaipur-poster.jpg) center/cover'; });
 
 /* ── Invitation sequence ── */
 let opening = false;
