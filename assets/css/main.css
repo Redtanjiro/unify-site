@@ -105,7 +105,7 @@ nav.links a[aria-current="page"]{border-color:currentColor}
 .hero video.on{opacity:1}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(20,8,10,.42),rgba(20,8,10,.06) 28%,rgba(20,8,10,.1) 62%,rgba(20,8,10,.55))}
 /* wordmark: starts under the header and drifts down to the two bottom corners */
-.hw{position:absolute;z-index:1;bottom:calc(40px + env(safe-area-inset-bottom,0px));margin:0;
+.hw{position:absolute;z-index:3;bottom:calc(40px + env(safe-area-inset-bottom,0px));margin:0;
   font-family:var(--display);font-weight:200;color:var(--ivory);text-transform:uppercase;letter-spacing:.16em;font-size:clamp(24px,3vw,46px);line-height:1;
   opacity:0;transform:translateY(calc(-100svh + 230px))}
 .hw-l{left:calc(var(--gut) + max(16px,env(safe-area-inset-left,0px)))}
@@ -196,12 +196,13 @@ form.enq button{justify-self:start;background:none;border:0;cursor:pointer;font:
 @media (max-width:640px){
   header.nav{grid-template-columns:auto 1fr auto}
   .home-mark{grid-column:1}
-  nav.links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:6px;background:var(--bg);color:var(--head);padding:14px var(--gut) 26px;box-shadow:0 1px 0 var(--line)}
+  nav.links{display:none;position:absolute;grid-column:auto;justify-self:stretch;top:100%;left:0;right:0;flex-direction:column;gap:6px;background:var(--bg);color:var(--head);padding:14px var(--gut) 26px;box-shadow:0 1px 0 var(--line)}
   nav.links.open{display:flex}
   .menu-btn{display:block}
-  .hw-l{font-size:34px;letter-spacing:.22em;bottom:calc(74px + env(safe-area-inset-bottom,0px))}
-  .hw-r{font-size:12px;letter-spacing:.3em;right:auto;left:calc(var(--gut) + max(16px,env(safe-area-inset-left,0px)));text-align:left}
+  .hw-l{font-size:42px;letter-spacing:.2em;bottom:calc(74px + env(safe-area-inset-bottom,0px))}
+  .hw-r{font-size:13px;letter-spacing:.28em;right:auto;left:calc(var(--gut) + max(16px,env(safe-area-inset-left,0px)));text-align:left}
   .cue{display:none}
+  section.band{padding-block:56px}
   .sheet-head{padding-inline:0}
   .row{grid-template-columns:1fr;gap:10px}
   .steps{grid-template-columns:1fr}

@@ -43,9 +43,8 @@ unify-site/
 │   ├── css/main.css        All styles; design tokens at the top in :root
 │   ├── js/main.js          Invitation sequence, hero film, scroll behaviour, page routing, enquiry form
 │   ├── video/
-│   │   ├── jaipur.mp4         Hero clip 1 (Jal Mahal, Jaipur) · 1600px wide, H.264, no audio
-│   │   ├── village.mp4        Hero clip 2 (hillside village) · 14 s
-│   │   ├── fields.mp4         Hero clip 3 (wheat field at sunset) · 14 s
+│   │   ├── jaipur.mp4         Hero film (Jal Mahal, Jaipur) · 1600px wide, H.264, no audio, ~2.9 MB, loops
+│   │   ├── jaipur-m.mp4       Same film at 720px (~0.4 MB), served to phones by main.js
 │   │   └── jaipur-poster.jpg  First frame; shown on the envelope card and while the film loads
 │   └── logo/               ← add the three SVGs listed above
 ├── .gitignore
@@ -81,7 +80,7 @@ Timing knobs in `main.js`: `FD` (flap, 820 ms), `D` (pull, 3000 ms), and the `ss
 **Open the invitation again** in the footer replays it. Visitors with *reduce motion* turned on get a short fade instead.
 
 ### 2. Hero film (`.hero`)
-- `position: fixed` and full screen. Three clips (Jal Mahal → village → fields) play muted and inline, cross-fading 1.6 s before each ends, on a loop (`XF` in `main.js`).
+- `position: fixed` and full screen. The Jaipur film plays muted, inline and looped. Screens 760px wide or narrower get `jaipur-m.mp4`.
 - **UNIFY** and **EVENTS & EXPERIENCES** start just under the header and float down to the bottom-left and bottom-right corners (`.hw`, 3.6 s). On phones both settle at bottom left.
 - The film pauses once the pocket fully covers it, to save battery.
 
@@ -101,7 +100,7 @@ Front-end only: it checks the name and email and shows a thank-you line. **It do
 ## Still placeholder
 
 - [x] Logo SVGs: traced from the Direction B slides in "Unify — Logo Directions.pdf". Swap in the designer's master vectors when available
-- [ ] Final venue films: swap `jaipur`, `village`, `fields` (.mp4 + -poster.jpg) in `assets/video/`, keeping the same names
+- [ ] Final venue film: swap `assets/video/jaipur.mp4`, `jaipur-m.mp4` and `jaipur-poster.jpg`, keeping the same names
 - [ ] Event photography for every `.plate` block ("photo to come")
 - [ ] Final copy; the current text is draft in the luxury tone
 - [ ] Contact details (`hello@unify.example`), social links

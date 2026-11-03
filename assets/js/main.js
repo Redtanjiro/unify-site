@@ -18,21 +18,15 @@ fetch(MONO).then(r => r.ok ? r.text() : Promise.reject()).then(txt => {
   document.querySelectorAll('.mono').forEach(el => { el.innerHTML = '<img alt="" src="assets/logo/unify-monogram-ivory.svg">'; });
 });
 
-/* ── Hero film: three clips cross-fade in a loop (Jal Mahal → village → fields) ── */
-const vids = [$('vidA'), $('vidB'), $('vidC')]; let cur = 0, z = 1, fading = false;
-const XF = 1.6;                                   // cross-fade length in seconds, matches .hero video transition
+/* ── Hero film: Jal Mahal, looped. Phones get the lighter 720px file ── */
+const vids = [$('vidA')]; let cur = 0;
+const small = matchMedia('(max-width: 760px)').matches;
+vids[0].src = `assets/video/jaipur${small ? '-m' : ''}.mp4`;
 function playClip(i){
   const v = vids[i];
   const p = v.play(); if (p && p.catch) p.catch(()=>{});
-  v.style.zIndex = ++z; v.classList.add('on'); cur = i;
+  v.classList.add('on'); cur = i;
 }
-// Near the end of each clip, start the next one on top and fade it in; the old clip stays lit underneath until it is covered
-vids.forEach((v, i) => v.addEventListener('timeupdate', () => {
-  if (i !== cur || fading || !v.duration || v.currentTime < v.duration - XF) return;
-  fading = true;
-  const n = (i + 1) % vids.length; vids[n].currentTime = 0; playClip(n);
-  setTimeout(() => { v.classList.remove('on'); v.pause(); fading = false; }, XF * 1000);
-}));
 vids[0].classList.add('on');
 vids[0].addEventListener('error', () => { $('hero').style.background = '#1d1411 url(assets/video/jaipur-poster.jpg) center/cover'; });
 
