@@ -1,14 +1,14 @@
 # Unify — Events & Experiences · Website prototype
 
-A static, single-page prototype for the Unify website. The visit opens with an Indian wedding invitation: the visitor breaks a wax seal, the envelope flap folds back, and the card is pulled out and up in one motion until it becomes a full-screen venue film. The rest of the site is the envelope pocket sliding up over the film, with the white invitation card rising inside it.
+Unify is a destination wedding company for couples abroad, starting with the US, who want to marry in India, backed by 25 years of Markcom. This is a static, single-page prototype of its website, built from the company profile (`../Unify — Company Profile 100 page template.pdf`). See `CLAUDE.md` for the full brief. The visit opens with an Indian wedding invitation: the visitor breaks a wax seal, the envelope flap folds back, and the card is pulled out and up in one motion until it becomes a full-screen venue film. The rest of the site is the envelope pocket sliding up over the film, with the white invitation card rising inside it.
 
 No build step and no dependencies: plain HTML, CSS and JavaScript.
 
 ---
 
-## Before you push: add the logo files
+## Logo files
 
-The three logo SVGs are **not in this folder**. They live in the brand deck artwork. Export them from the approved Direction B files and save them with these exact names:
+The three logo SVGs in `assets/logo/` were traced from the Direction B slides in "Unify — Logo Directions.pdf". Replace them with the designer's master vectors when available, keeping these names:
 
 | File | What it is | Used for |
 |---|---|---|
@@ -38,15 +38,16 @@ or `npx serve .`
 
 ```
 unify-site/
-├── index.html              Page markup: invitation, header, hero film, envelope pocket, five pages, footer
+├── index.html              Page markup: invitation, header, menu overlay, hero film, envelope pocket, nine pages, footer
 ├── assets/
 │   ├── css/main.css        All styles; design tokens at the top in :root
-│   ├── js/main.js          Invitation sequence, hero film, scroll behaviour, page routing, enquiry form
+│   ├── js/main.js          Invitation sequence, hero film, scroll behaviour, routing, menu, destination quiz, enquiry form
 │   ├── video/
 │   │   ├── jaipur.mp4         Hero film (Jal Mahal, Jaipur) · 1600px wide, H.264, no audio, ~2.9 MB, loops
 │   │   ├── jaipur-m.mp4       Same film at 720px (~0.4 MB), served to phones by main.js
 │   │   └── jaipur-poster.jpg  First frame; shown on the envelope card and while the film loads
-│   └── logo/               ← add the three SVGs listed above
+│   └── logo/               Monogram (ink + ivory) and lockup SVGs
+├── CLAUDE.md               Handoff brief: positioning, rules, section-by-section content
 ├── .gitignore
 └── README.md
 ```
@@ -89,11 +90,19 @@ Timing knobs in `main.js`: `FD` (flap, 820 ms), `D` (pull, 3000 ms), and the `ss
 - The white card inside rises slightly faster than the pocket for the first screen of scrolling (`--lift`, set in `onScroll()`), so it reads as the invite being pulled out.
 - The header is clear over the film and turns the paper colour once the pocket reaches the top.
 
-### 4. Pages
-Hash routing, all in one file: `#home`, `#about`, `#experiences`, `#portfolio`, `#enquire`. Inner pages skip the film and open straight onto the pocket and card.
+### 4. Pages and navigation
+Hash routing, all in one file (`views` in `main.js`): `#home`, `#about` (including Who we serve, `#serve`), `#services`, `#destinations`, `#process` (How we work), `#work`, `#investment`, `#enquire` (team, contact and form) and `#terms` (linked from the footer). The old prototype links `#experiences` and `#portfolio` redirect to `#services` and `#work`. Inner pages skip the film and open straight onto the pocket and card.
 
-### 5. Enquiry form
-Front-end only: it checks the name and email and shows a thank-you line. **It does not send anything.** Connect it to a form service (Formspree, Netlify Forms, or the client's CRM) before launch.
+The header keeps three links (Services · Destinations · Enquire) right of the centred monogram, with **Menu** on the left. Menu opens a full-screen paper overlay listing every page; it closes with Escape, keeps focus inside while open, and returns focus to the Menu button. On phones only the monogram and Menu show.
+
+### 5. Destination quiz (`#quiz` on Destinations)
+Four questions (guests, months, setting, budget band). Each destination scores on setting, season and scale using the at-a-glance table (`DEST` in `main.js`); out-of-season destinations drop out and the top three show. **Get my shortlist** carries the picks and budget band into the enquiry form. Budget doesn't change the scoring, because there are no prices yet.
+
+### 6. Enquiry form
+Built around the discovery call: names, email, phone or WhatsApp, where you live, preferred call hours, destinations, date, guests, budget band, message. Front-end only: it checks the names and email and shows a thank-you line. **It does not send anything.** Connect it to a form service (Formspree, Netlify Forms, or the client's CRM) before launch.
+
+### 7. Placeholders
+Anything the client hasn't supplied appears as a visible gold placeholder (`.draft`, e.g. `[__]`, `[$__]`, `[Founder name]`). Never replace one with an invented number, price, name, venue, logo or testimonial.
 
 ---
 
@@ -101,11 +110,13 @@ Front-end only: it checks the name and email and shows a thank-you line. **It do
 
 - [x] Logo SVGs: traced from the Direction B slides in "Unify — Logo Directions.pdf". Swap in the designer's master vectors when available
 - [ ] Final venue film: swap `assets/video/jaipur.mp4`, `jaipur-m.mp4` and `jaipur-poster.jpg`, keeping the same names
-- [ ] Event photography for every `.plate` block ("photo to come")
-- [ ] Final copy; the current text is draft in the luxury tone
-- [ ] Contact details (`hello@unify.example`), social links
+- [ ] Event, destination and team photography for every `.plate` ("photo to come")
+- [ ] Prices: collections, destination budget ranges, sample proposal, payment schedule
+- [ ] Markcom numbers (events, cities, guests), founder name, team, client and hotel logos, partners
+- [ ] Case studies and testimonials
+- [ ] Contact details (email, phone, WhatsApp, domain)
+- [ ] Policies: changes and cancellation, guest visas, multi-faith weddings, terms
 - [ ] Enquiry form backend
-- [ ] Page list to be checked against the planning brief (testimonials, team, planning-from-overseas section, WhatsApp contact)
 
 ## Video export settings (for the final film)
 
@@ -119,16 +130,4 @@ Aim for under 4 MB. `-an` strips audio and `+faststart` lets it start playing be
 
 ## Deploy
 
-Any static host works: GitHub Pages, Netlify or Vercel. Push the folder as-is with `index.html` at the root.
-
-### Suggested first commit
-
-```
-feat: Unify website prototype
-
-- Wedding-invitation opening: seal, flap fold, continuous card pull into the hero film
-- Fixed Jaipur hero film with drifting UNIFY / EVENTS & EXPERIENCES wordmark
-- Envelope-pocket layout for the rest of the site with rising invitation card
-- Home, About, Experiences, Portfolio and Enquire pages (hash routing)
-- Brand tokens: Unify palette, Noto Serif Display / Noto Serif
-```
+Any static host works: GitHub Pages, Netlify or Vercel. Push the folder as-is with `index.html` at the root. Live preview: https://redtanjiro.github.io/unify-site/ (GitHub Pages from `main`). Bump `?v=` on the CSS and JS links whenever they change, so returning visitors get the new files.

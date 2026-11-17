@@ -111,7 +111,8 @@ let autoT;
 document.documentElement.style.overflow = 'hidden'; autoT = setTimeout(open, 9000);
 
 /* ── Header: clear over the film, solid on paper ── */
-const views = ['home','about','experiences','portfolio','enquire'];
+const views = ['home','about','services','destinations','process','work','investment','enquire','terms'];
+const moved = {experiences:'services', portfolio:'work'};   // old prototype links
 let page = 'home';
 const invite = $('invite');
 function onScroll(){
@@ -125,25 +126,88 @@ function onScroll(){
 addEventListener('scroll', onScroll, {passive:true});
 
 function route(){
-  page = views.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'home';
+  const h = location.hash.slice(1);
+  if (moved[h]) { location.replace('#' + moved[h]); return; }
+  page = views.includes(h) ? h : 'home';
   views.forEach(v=>$('v-'+v).classList.toggle('on', v===page));
-  document.querySelectorAll('nav.links a').forEach(a=>{ if (a.getAttribute('href')==='#'+page) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
+  document.querySelectorAll('nav.links a, .menu-links a').forEach(a=>{ if (a.getAttribute('href')==='#'+page) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
   $('ctaBand').hidden = page === 'enquire';
   document.body.classList.toggle('inner', page !== 'home');
-  $('navLinks').classList.remove('open');
+  closeMenu(false);
   scrollTo({top:0, behavior:'instant'});
   if (page==='home'){ const v=vids[cur]; const p=v.play(); if(p&&p.catch)p.catch(()=>{}); } else vids.forEach(v=>v.pause());
   onScroll();
 }
+
+/* ── Menu: full-screen paper overlay listing every page ── */
+const menu = $('menu'), mb = $('menuBtn');
+function openMenu(){
+  menu.hidden = false; void menu.offsetWidth; menu.classList.add('on');   // reflow, so the fade starts from 0
+  document.body.classList.add('menu-open'); mb.setAttribute('aria-expanded', 'true');
+  (menu.querySelector('[aria-current]') || menu.querySelector('.menu-links a')).focus();
+}
+function closeMenu(refocus = true){
+  if (menu.hidden) return;
+  menu.classList.remove('on'); document.body.classList.remove('menu-open'); mb.setAttribute('aria-expanded', 'false');
+  setTimeout(() => { if (!menu.classList.contains('on')) menu.hidden = true; }, reduce ? 0 : 350);
+  if (refocus) mb.focus();
+}
+mb.addEventListener('click', openMenu);
+$('menuClose').addEventListener('click', () => closeMenu());
+// a link to the page already open does not fire hashchange, so close the menu here too
+menu.querySelectorAll('.menu-links a').forEach(a => a.addEventListener('click', () => { if (a.getAttribute('href') === '#' + page) closeMenu(); }));
+addEventListener('keydown', e => {
+  if (menu.hidden) return;
+  if (e.key === 'Escape') closeMenu();
+  if (e.key === 'Tab'){   // keep focus inside the open menu
+    const f = [...menu.querySelectorAll('button, a')], first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  }
+});
+
 addEventListener('hashchange', route); route();
 
-const mb = $('menuBtn');
-mb.addEventListener('click',()=>{ const o = $('navLinks').classList.toggle('open'); mb.setAttribute('aria-expanded', o); nav.classList.add('solid'); if(!o) onScroll(); });
+/* ── Destination quiz: simple scoring from the at-a-glance table ── */
+const DEST = {
+  Udaipur: {line:'The city of lakes and palaces', months:['oct','win','mar'], settings:{palace:3}, scale:'grand'},
+  Jaipur:  {line:'The Pink City’s palaces, forts and gardens', months:['oct','win','mar'], settings:{palace:3, fort:2}, scale:'grand'},
+  Jodhpur: {line:'The Blue City, beneath a desert fort', months:['oct','win','mar'], settings:{fort:3, palace:1}},
+  Goa:     {line:'Sea, sand and an unhurried coastal rhythm', months:['win'], settings:{beach:3}, scale:'intimate'},
+  Kerala:  {line:'Backwaters, palms and a quieter kind of luxury', months:['sep','oct','win','mar'], settings:{backwater:3, beach:2, heritage:1}, scale:'intimate'},
+  Gujarat: {line:'Heritage homes, and for many families, a homecoming', months:['win'], settings:{heritage:3, palace:2}}
+};
+const SEASON = {Udaipur:'October to March', Jaipur:'October to March', Jodhpur:'October to March', Goa:'November to February', Kerala:'September to March', Gujarat:'November to February'};
+let quizPicks = [];
+$('quizForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const fd = new FormData(e.target), g = fd.get('guests'), m = fd.get('month'), s = fd.get('setting'), band = fd.get('band'), out = $('quizOut');
+  if (!g || !m || !s || band === null){ out.innerHTML = '<p class="note">Answer all four questions and we’ll suggest your destinations.</p>'; return; }
+  const scored = Object.entries(DEST).map(([name, d]) => {
+    let score = d.settings[s] || 0;
+    const inSeason = m === 'any' || d.months.includes(m);
+    if (inSeason) score += 2;
+    if ((g === 's' && d.scale === 'intimate') || ((g === 'l' || g === 'xl') && d.scale === 'grand')) score += 1;
+    return {name, score, inSeason};
+  }).filter(d => d.inSeason && d.score > 2).sort((a, b) => b.score - a.score).slice(0, 3);
+  quizPicks = scored.map(d => d.name);
+  if (!scored.length){
+    out.innerHTML = '<p>No single destination fits all four answers, which is exactly what a planner is for. <a class="link" href="#enquire">Ask for a shortlist <span class="ar">→</span></a></p>';
+    return;
+  }
+  out.innerHTML = `<span class="label">Suggested for you</span><ol>${scored.map((d, i) => `<li><strong>${d.name}</strong><span>${DEST[d.name].line} · ${SEASON[d.name]}</span>${i === 0 ? '<em>Closest match</em>' : ''}</li>`).join('')}</ol>
+    <p class="muted small">${band ? `With the ${band} collection in mind, a` : 'A'} planner follows up with a shortlist of venues.</p>
+    <a class="link" href="#enquire" id="quizToForm">Get my shortlist <span class="ar">→</span></a>`;
+  $('quizToForm').addEventListener('click', () => {   // carry the answers into the enquiry form
+    document.querySelectorAll('#f-dests input').forEach(i => { i.checked = quizPicks.includes(i.value); });
+    const opt = [...$('f-band').options].find(o => band && o.text.startsWith(band)); if (opt) $('f-band').value = opt.value;
+  });
+});
 
 $('enqForm').addEventListener('submit', e=>{
   e.preventDefault();
   const name = $('f-name').value.trim(), em = $('f-email').value.trim(), note = $('formNote');
-  if (!name || !/.+@.+\..+/.test(em)) { note.textContent = 'Add your name and a valid email so we can reply.'; return; }
-  note.textContent = `Thank you, ${name}. This prototype doesn't send enquiries yet; on the live site this goes straight to the Unify team.`;
+  if (!name || !/.+@.+\..+/.test(em)) { note.textContent = 'Add your names and a valid email so we can reply.'; return; }
+  note.textContent = `Thank you, ${name}. This prototype doesn't send enquiries yet; on the live site this goes straight to the Unify team, and a planner replies within two business hours.`;
 });
 })();
