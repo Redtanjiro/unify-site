@@ -5,7 +5,7 @@ const intro = $('intro'), card = $('card'), nav = $('nav');
 const wait = ms => new Promise(r => setTimeout(r, ms));
 
 /* Monogram: load the logo file once and inline it so it can take any brand colour (gold on the seal, ivory on film, maroon on paper) */
-const MONO = 'assets/logo/unify-monogram.svg';
+const MONO = 'assets/logo/unify-monogram.svg?v=10';
 fetch(MONO).then(r => r.ok ? r.text() : Promise.reject()).then(txt => {
   const svg = txt.replace(/<\?xml[^>]*>/,'')
     .replace(/fill="(?!none)[^"]*"/g,'fill="currentColor"')
@@ -15,7 +15,7 @@ fetch(MONO).then(r => r.ok ? r.text() : Promise.reject()).then(txt => {
     const s = el.querySelector('svg'); if (s){ s.removeAttribute('width'); s.removeAttribute('height'); s.setAttribute('aria-hidden','true'); s.setAttribute('preserveAspectRatio','xMidYMid meet'); }
   });
 }).catch(() => {
-  document.querySelectorAll('.mono').forEach(el => { el.innerHTML = '<img alt="" src="assets/logo/unify-monogram-ivory.svg">'; });
+  document.querySelectorAll('.mono').forEach(el => { el.innerHTML = '<img alt="" src="assets/logo/unify-monogram-ivory.svg?v=10">'; });
 });
 
 /* ── Hero film: Jal Mahal, looped. Phones get the lighter 720px file ── */

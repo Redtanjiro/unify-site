@@ -8,11 +8,11 @@ No build step and no dependencies: plain HTML, CSS and JavaScript.
 
 ## Logo files
 
-The three logo SVGs in `assets/logo/` were traced from the Direction B slides in "Unify — Logo Directions.pdf". Replace them with the designer's master vectors when available, keeping these names:
+The three logo SVGs in `assets/logo/` were traced from the Direction A slides in "Unify — Logo Directions.pdf". Replace them with the designer's master vectors when available, keeping these names:
 
 | File | What it is | Used for |
 |---|---|---|
-| `assets/logo/unify-monogram.svg` | U‑n‑Y monogram with the star, single colour (ink) | Header, wax seals, envelope card, statement ornament, favicon |
+| `assets/logo/unify-monogram.svg` | U‑Y "bloom" monogram with the star (Direction A), single colour (ink) | Header, wax seals, envelope card, statement ornament, favicon |
 | `assets/logo/unify-monogram-ivory.svg` | Same monogram in ivory `#FAF5EA` | Fallback if the script can't recolour the monogram |
 | `assets/logo/unify-lockup.svg` | Full lockup: monogram + UNIFY + EVENTS & EXPERIENCES, ink | Footer |
 
@@ -108,7 +108,7 @@ Anything the client hasn't supplied appears as a visible gold placeholder (`.dra
 
 ## Still placeholder
 
-- [x] Logo SVGs: traced from the Direction B slides in "Unify — Logo Directions.pdf". Swap in the designer's master vectors when available
+- [x] Logo SVGs: traced from the Direction A slides in "Unify — Logo Directions.pdf". Swap in the designer's master vectors when available
 - [ ] Final venue film: swap `assets/video/jaipur.mp4`, `jaipur-m.mp4` and `jaipur-poster.jpg`, keeping the same names
 - [ ] Event, destination and team photography for every `.plate` ("photo to come")
 - [ ] Prices: collections, destination budget ranges, sample proposal, payment schedule
