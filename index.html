@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,200;0,300;0,400;1,300&family=Noto+Serif:wght@300;400&display=swap">
-<link rel="stylesheet" href="assets/css/main.css?v=9">
+<link rel="stylesheet" href="assets/css/main.css?v=11">
 </head>
 <body>
 <!-- Invitation -->
@@ -59,6 +59,7 @@
     <a href="#destinations">Destinations</a>
     <a href="#process">How we work</a>
     <a href="#work">Our work</a>
+    <a href="#gallery">Gallery</a>
     <a href="#investment">Investment</a>
     <a href="#enquire">Enquire</a>
   </nav>
@@ -82,79 +83,109 @@
   <span class="label">Destination weddings in India</span>
   <h2>Come home to say I&nbsp;do.</h2>
   <p>Destination weddings in India, planned for couples who live everywhere else.</p>
+  <a class="link" href="#enquire">Book a discovery call <span class="ar">→</span></a>
 </div>
 <div class="invite" id="invite">
 
 <!-- ═════════ HOME ═════════ -->
 <div class="view" id="v-home"><div class="wrap">
-  <section class="band statement">
-    <i class="mono orn" aria-hidden="true"></i>
-    <span class="label">Who we are</span>
-    <h2 class="big">India’s weddings, made easy for couples who live elsewhere.</h2>
-    <p class="lede">Couples abroad don’t lack inspiration. What they need is certainty across time zones, currencies, vendors and families. Unify is a single accountable team in India, backed by 25 years of Markcom.</p>
-    <a class="link" href="#about">Why Unify <span class="ar">→</span></a>
-  </section>
-
-  <section class="band" style="padding-top:0">
-    <div class="sec-head"><span class="label">Our promise</span><h2 class="h2">One team in India. Every detail handled.</h2></div>
-    <div class="values">
-      <div><h3>One team in India</h3><p>A dedicated planner and an on-ground team, working while you sleep.</p></div>
-      <div><h3>25 years of Markcom</h3><p>A quarter century of large events, and the process and partners that come with it.</p></div>
-      <div><h3>Every detail, handled</h3><p>Guests, logistics and rituals, so you simply arrive and celebrate.</p></div>
+  <section class="band teams">
+    <div class="split">
+      <div class="sec-head"><span class="label">Two teams · one celebration</span><h2 class="h2">Wedding planning that feels <em>like a vacation.</em></h2></div>
+      <div class="teams-body">
+        <p class="lede">One celebration, two dedicated teams. Our US team plans with you in your time zone, and our India team makes it happen on the ground. From the first call to the final vidaai, you’ll always have someone who knows every detail.</p>
+        <div class="clocks">
+          <figure class="clock" data-tz="America/New_York">
+            <svg viewBox="0 0 100 100" aria-hidden="true"><circle class="face" cx="50" cy="50" r="47"/><g class="ticks"></g><line class="hh" x1="50" y1="50" x2="50" y2="29"/><line class="mm" x1="50" y1="50" x2="50" y2="15"/><circle class="pin" cx="50" cy="50" r="2.2"/></svg>
+            <figcaption><span class="label">New Jersey · US team</span><strong class="t">–</strong></figcaption>
+          </figure>
+          <div class="gap"><i class="spark" aria-hidden="true"></i><span class="label" id="tzGap"></span></div>
+          <figure class="clock" data-tz="Asia/Kolkata">
+            <svg viewBox="0 0 100 100" aria-hidden="true"><circle class="face" cx="50" cy="50" r="47"/><g class="ticks"></g><line class="hh" x1="50" y1="50" x2="50" y2="29"/><line class="mm" x1="50" y1="50" x2="50" y2="15"/><circle class="pin" cx="50" cy="50" r="2.2"/></svg>
+            <figcaption><span class="label">Udaipur · India team</span><strong class="t">–</strong></figcaption>
+          </figure>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="band split">
-    <div class="sec-head"><span class="label">What we do</span><h2 class="h2">Six services, one team</h2><a class="link" href="#services">All services <span class="ar">→</span></a></div>
-    <div class="list plain">
-      <a class="row" href="#services"><div><h3>Concierge planning</h3><p>One planner, calls in your hours, weekly updates.</p></div><span class="link"><span class="ar">→</span></span></a>
-      <a class="row" href="#services"><div><h3>Destinations &amp; venues</h3><p>Shortlists, site visits and virtual walk-throughs.</p></div><span class="link"><span class="ar">→</span></span></a>
-      <a class="row" href="#services"><div><h3>Rituals &amp; ceremonies</h3><p>Pandit coordination and a run-of-show for each.</p></div><span class="link"><span class="ar">→</span></span></a>
-      <a class="row" href="#services"><div><h3>Guest experience</h3><p>Room blocks, arrivals, transfers and a helpdesk.</p></div><span class="link"><span class="ar">→</span></span></a>
-      <a class="row" href="#services"><div><h3>Design &amp; celebration</h3><p>Mandaps, décor and colour stories.</p></div><span class="link"><span class="ar">→</span></span></a>
-      <a class="row" href="#services"><div><h3>Contingency</h3><p>Plans for weather, power and no-shows.</p></div><span class="link"><span class="ar">→</span></span></a>
-    </div>
+  <section class="band occasions" style="padding-top:0">
+    <div class="sec-head"><span class="label">What we plan</span><h2 class="h2">Events &amp; occasions</h2></div>
+    <ul class="occ">
+      <li><i class="spark" aria-hidden="true"></i>Kankotri Lekhan</li>
+      <li><i class="spark" aria-hidden="true"></i>Engagement</li>
+      <li><i class="spark" aria-hidden="true"></i>Ganesh Sthapan</li>
+      <li><i class="spark" aria-hidden="true"></i>Mehendi</li>
+      <li><i class="spark" aria-hidden="true"></i>Haldi / Carnival</li>
+      <li><i class="spark" aria-hidden="true"></i>Garba / Dandia</li>
+      <li><i class="spark" aria-hidden="true"></i>Sangeet</li>
+      <li><i class="spark" aria-hidden="true"></i>Bhaat / Mameru</li>
+      <li><i class="spark" aria-hidden="true"></i>Bachelors / Bachelorette</li>
+      <li><i class="spark" aria-hidden="true"></i>Baraat</li>
+      <li><i class="spark" aria-hidden="true"></i>Milni</li>
+      <li><i class="spark" aria-hidden="true"></i>Wedding</li>
+      <li><i class="spark" aria-hidden="true"></i>Reception</li>
+      <li><i class="spark" aria-hidden="true"></i>Anniversary</li>
+      <li><i class="spark" aria-hidden="true"></i>Birthday</li>
+      <li><i class="spark" aria-hidden="true"></i>Reunion</li>
+    </ul>
   </section>
 
   <section class="band" style="padding-top:0">
     <div class="sec-row">
-      <div class="sec-head"><span class="label">Where</span><h2 class="h2">Palaces, forts, beaches and backwaters</h2></div>
+      <div class="sec-head"><span class="label">Celebrate across India</span><h2 class="h2">Palaces, mountains, beaches and backwaters</h2></div>
       <a class="link" href="#destinations">Explore destinations <span class="ar">→</span></a>
     </div>
-    <div class="plates six">
-      <a class="plate" href="#destinations"><span class="tag">Udaipur · Lake palaces</span></a>
-      <a class="plate" href="#destinations"><span class="tag">Jaipur · Pink City palaces</span></a>
-      <a class="plate" href="#destinations"><span class="tag">Jodhpur · Desert forts</span></a>
-      <a class="plate" href="#destinations"><span class="tag">Goa · Beach estates</span></a>
-      <a class="plate" href="#destinations"><span class="tag">Kerala · Backwater retreats</span></a>
-      <a class="plate" href="#destinations"><span class="tag">Gujarat · Heritage homes</span></a>
+    <div class="regions">
+      <a href="#destinations"><span class="plate"><span class="tag">Photo to come</span></span><h3>Rajasthan</h3></a>
+      <a href="#destinations"><span class="plate"><span class="tag">Photo to come</span></span><h3>The Himalayas</h3></a>
+      <a href="#destinations"><span class="plate"><span class="tag">Photo to come</span></span><h3>Banaras</h3></a>
+      <a href="#destinations"><span class="plate"><span class="tag">Photo to come</span></span><h3>Goa</h3></a>
+      <a href="#destinations"><span class="plate"><span class="tag">Photo to come</span></span><h3>South India</h3></a>
+      <a href="#destinations"><span class="plate"><span class="tag">Photo to come</span></span><h3>Gujarat</h3></a>
+    </div>
+  </section>
+
+  <section class="quiz-teaser"><div class="inner">
+    <span class="label">Not sure where?</span>
+    <h2>Find your destination in six questions.</h2>
+    <p>Season, setting, scale and the feel you want, matched against every destination we plan in.</p>
+    <a class="link" href="#quiz">Take the quiz <span class="ar">→</span></a>
+  </div></section>
+
+  <section class="band">
+    <div class="sec-head"><span class="label">Our legacy</span><h2 class="h2">A quarter century of live events behind every wedding</h2></div>
+    <dl class="stats legacy">
+      <div><dt data-count="25">25</dt><dd>Years of Markcom events</dd></div>
+      <div><dt data-count="100" data-suffix="+">100+</dt><dd>Events and celebrations</dd></div>
+      <div><dt data-count="50" data-suffix="+">50+</dt><dd>Awards for event excellence</dd></div>
+    </dl>
+  </section>
+
+  <section class="band" style="padding-top:0">
+    <div class="sec-head"><span class="label">Gallery</span><h2 class="h2">Moments we’ve created</h2></div>
+    <div class="masonry" data-gallery id="homeGallery"></div>
+    <a class="link more" href="#gallery">View full gallery <span class="ar">→</span></a>
+  </section>
+
+  <section class="band split" style="padding-top:0">
+    <div class="sec-head"><span class="label">What we do</span><h2 class="h2">Everything, handled.</h2><a class="link" href="#services">All services <span class="ar">→</span></a></div>
+    <div class="list plain">
+      <a class="row" href="#services"><div><h3>Venues and destinations</h3><p>Shortlists, site visits and virtual walk-throughs.</p></div><span class="link"><span class="ar">→</span></span></a>
+      <a class="row" href="#services"><div><h3>Planning and production</h3><p>One planner, calls in your hours, weekly updates.</p></div><span class="link"><span class="ar">→</span></span></a>
+      <a class="row" href="#services"><div><h3>Design, décor and wedding branding</h3><p>Mandaps, colour stories and a look that is yours.</p></div><span class="link"><span class="ar">→</span></span></a>
+      <a class="row" href="#services"><div><h3>Food, music and entertainment</h3><p>Menus, sangeet and every evening’s soundtrack.</p></div><span class="link"><span class="ar">→</span></span></a>
+      <a class="row" href="#services"><div><h3>Guest experience and hospitality</h3><p>Room blocks, arrivals, transfers and a helpdesk.</p></div><span class="link"><span class="ar">→</span></span></a>
+      <a class="row" href="#services"><div><h3>Photography, films and on-ground management</h3><p>Every moment captured, every function run.</p></div><span class="link"><span class="ar">→</span></span></a>
     </div>
   </section>
 
   <section class="band" style="padding-top:0">
-    <div class="sec-row">
-      <div class="sec-head"><span class="label">How it works</span><h2 class="h2">Five steps, one team</h2></div>
-      <a class="link" href="#process">How we work <span class="ar">→</span></a>
-    </div>
-    <div class="steps five">
-      <div class="step"><span class="label">01</span><h3>Discovery call</h3><p>A conversation in US or Indian hours.</p></div>
-      <div class="step"><span class="label">02</span><h3>Itemised proposal</h3><p>Every line in dollars, within five days.</p></div>
-      <div class="step"><span class="label">03</span><h3>Planning together</h3><p>A shared timeline and weekly updates.</p></div>
-      <div class="step"><span class="label">04</span><h3>The celebration</h3><p>Our team on the ground throughout.</p></div>
-      <div class="step"><span class="label">05</span><h3>Every guest home</h3><p>Departures handled, memories delivered.</p></div>
-    </div>
-  </section>
-
-  <section class="band" style="padding-top:0">
-    <div class="sec-row">
-      <div class="sec-head"><span class="label">Investment</span><h2 class="h2">Four ways to celebrate</h2></div>
-      <a class="link" href="#investment">See investment <span class="ar">→</span></a>
-    </div>
-    <div class="tiers">
-      <div class="tier"><h3>Intimate</h3><span class="label">50–100 guests</span><p class="from">From <span class="draft">[$__]</span></p></div>
-      <div class="tier"><h3>Classic</h3><span class="label">100–250 guests</span><p class="from">From <span class="draft">[$__]</span></p></div>
-      <div class="tier"><h3>Grand</h3><span class="label">250–400 guests</span><p class="from">From <span class="draft">[$__]</span></p></div>
-      <div class="tier"><h3>Palace</h3><span class="label">400+ guests</span><p class="from">From <span class="draft">[$__]</span></p></div>
+    <div class="sec-head"><span class="label">In their words</span><h2 class="h2">From the families we’ve served</h2></div>
+    <div class="quotes">
+      <figure><blockquote class="draft">[Testimonial, in the client’s own words.]</blockquote><figcaption class="label draft">[Name] · [City]</figcaption></figure>
+      <figure><blockquote class="draft">[Testimonial, in the client’s own words.]</blockquote><figcaption class="label draft">[Name] · [City]</figcaption></figure>
+      <figure><blockquote class="draft">[Testimonial, in the client’s own words.]</blockquote><figcaption class="label draft">[Name] · [City]</figcaption></figure>
     </div>
   </section>
 </div></div>
@@ -165,6 +196,11 @@
     <span class="label">About</span>
     <h1>Many planners sell beautiful weddings. Few sell certainty.</h1>
     <p>Couples abroad don’t lack inspiration. Their worry is coordination: a multi-day wedding across time zones, currencies, vendors, guests and families, with no one they can meet in person. Our answer is a single accountable team in India.</p>
+  </section>
+
+  <section class="who-strip" aria-label="Photographs to come">
+    <div class="plate"><span class="tag">Photo to come</span></div><div class="plate"><span class="tag">Photo to come</span></div><div class="plate"><span class="tag">Photo to come</span></div>
+    <div class="plate"><span class="tag">Photo to come</span></div><div class="plate"><span class="tag">Photo to come</span></div><div class="plate"><span class="tag">Photo to come</span></div>
   </section>
 
   <section class="band cols2" style="padding-top:0">
@@ -199,15 +235,8 @@
   </section>
 
   <section class="band split" style="padding-top:0">
-    <div class="sec-head"><span class="label">Our standard</span><h2 class="h2">The Markcom Standard</h2><p class="muted">A named checklist attached to every proposal, so a quarter century of experience becomes a promise you can hold us to.</p></div>
-    <ul class="incl">
-      <li>Written timelines for every event</li>
-      <li>Backup plans for weather, power and vendors</li>
-      <li>Defined on-site team ratios</li>
-      <li>Itemised, written quotes</li>
-      <li>A vetted vendor network</li>
-      <li>A run-of-show for every ceremony</li>
-    </ul>
+    <div class="sec-head"><span class="label">Our standard</span><h2 class="h2">The Unify Standard</h2></div>
+    <div class="sec-head"><p class="muted">Seven written promises attached to every proposal, built on a quarter century of Markcom events, so experience becomes something you can hold us to.</p><a class="link" href="#standard">Read the Unify Standard <span class="ar">→</span></a></div>
   </section>
 
   <section class="band cols2" style="padding-top:0">
@@ -284,38 +313,86 @@
 <div class="view" id="v-services"><div class="wrap">
   <section class="page-head">
     <span class="label">Services</span>
-    <h1>Everything a wedding in India asks of you</h1>
-    <p>Six services, one team, every detail held in one place.</p>
+    <h1>Everything, handled.</h1>
+    <p>Six services. One team. A celebration that arrives ready.</p>
   </section>
 
   <section class="svcs">
     <article class="svc">
-      <div class="sec-head"><span class="label">Concierge planning</span><h2 class="h2">One planner who knows your wedding by heart</h2><p class="muted">A dedicated planner leads from the first call, with calls in US-friendly hours, weekly WhatsApp and video updates, and our team on the ground in India.</p></div>
-      <div><h3 class="label">What’s included</h3><ul class="incl"><li>A dedicated planner, start to finish</li><li>Calls scheduled in your time zone</li><li>Weekly WhatsApp and video updates</li><li>A shared planning timeline</li><li>Vendor sourcing, briefs and contracts</li><li>Budget tracked against your proposal</li></ul></div>
+      <div class="sec-head"><span class="label">01 · Venues and destinations</span><h2 class="h2">The right place, chosen with you</h2><p class="muted">City, season and venue, chosen together: shortlists, our own site visits and virtual walk-throughs, so you see a place before you travel.</p></div>
+      <div><h3 class="label">Includes</h3><ul class="incl"><li>Destination guidance and quiz</li><li>Shortlists matched to guests and budget</li><li>Site visits by our own team</li><li>Virtual walk-throughs on video</li><li>Room-block negotiation</li><li>Permits and venue logistics</li></ul></div>
     </article>
     <article class="svc">
-      <div class="sec-head"><span class="label">Destinations &amp; venues</span><h2 class="h2">The right place, chosen with you</h2><p class="muted">City, season and venue, chosen together: shortlists, our own site visits and virtual walk-throughs, so you see a place before you travel.</p></div>
-      <div><h3 class="label">What’s included</h3><ul class="incl"><li>Destination guidance and quiz</li><li>Shortlists matched to guests and budget</li><li>Site visits by our own team</li><li>Virtual walk-throughs on video</li><li>Room-block negotiation</li><li>Permits and venue logistics</li></ul></div>
+      <div class="sec-head"><span class="label">02 · Planning and production</span><h2 class="h2">One planner who knows your wedding by heart</h2><p class="muted">A dedicated planner leads from the first call, with calls in US-friendly hours, weekly WhatsApp and video updates, and a production team in India running every function.</p></div>
+      <div><h3 class="label">Includes</h3><ul class="incl"><li>A dedicated planner, start to finish</li><li>Calls scheduled in your time zone</li><li>Weekly WhatsApp and video updates</li><li>A shared planning timeline</li><li>Vendor sourcing, briefs and contracts</li><li>Budget tracked against your proposal</li></ul></div>
     </article>
     <article class="svc">
-      <div class="sec-head"><span class="label">Rituals &amp; ceremonies</span><h2 class="h2">Every ritual, done right</h2><p class="muted">Pandit and ritual coordination, family-role planning and a run-of-show for each ceremony, with gentle guidance for guests new to Indian traditions.</p></div>
-      <div><h3 class="label">What’s included</h3><ul class="incl"><li>Pandit and priest coordination</li><li>Rituals for both families’ traditions</li><li>Family-role planning</li><li>A run-of-show for every ceremony</li><li>Ritual guides for non-Indian guests</li><li>Ceremony materials and setup</li></ul></div>
+      <div class="sec-head"><span class="label">03 · Design, décor and wedding branding</span><h2 class="h2">A celebration that looks like you</h2><p class="muted">Mandaps, décor, moodboards and colour stories, designed with you and built by craftspeople from Markcom’s long-standing network, with a wedding identity carried from the invitation to the last sign.</p></div>
+      <div><h3 class="label">Includes</h3><ul class="incl"><li>Moodboards and colour stories</li><li>Mandap and stage design</li><li>Floral and décor direction</li><li>Lighting</li><li>Stationery and signage</li><li>A wedding monogram and identity</li></ul></div>
     </article>
     <article class="svc">
-      <div class="sec-head"><span class="label">Guest experience</span><h2 class="h2">Every guest, looked after</h2><p class="muted">From landing to leaving: room blocks, an arrival desk, transfers, itineraries and a WhatsApp helpdesk, with particular care for elders.</p></div>
-      <div><h3 class="label">What’s included</h3><ul class="incl"><li>Room blocks and hotel liaison</li><li>An airport arrival desk</li><li>Transfers to the hotel and every venue</li><li>Personal guest itineraries</li><li>A guest WhatsApp helpdesk</li><li>Comfort planning for elders</li></ul></div>
+      <div class="sec-head"><span class="label">04 · Food, music and entertainment</span><h2 class="h2">Every evening, its own rhythm</h2><p class="muted">Menus for every function, tasted before you arrive, and the music, performers and sound that carry each night from the mehendi to the reception.</p></div>
+      <div><h3 class="label">Includes</h3><ul class="incl"><li>Menus planned for every function</li><li>Caterer tastings, shared on video</li><li>Sangeet and entertainment</li><li>Bands, DJs and live music</li><li>Sound and stage</li><li>Sound checks with every performer and officiant</li></ul></div>
     </article>
     <article class="svc">
-      <div class="sec-head"><span class="label">Design &amp; celebration</span><h2 class="h2">A celebration that looks like you</h2><p class="muted">Mandaps, décor, looks, moodboards and colour stories, designed with you and built by craftspeople from Markcom’s long-standing network.</p></div>
-      <div><h3 class="label">What’s included</h3><ul class="incl"><li>Moodboards and colour stories</li><li>Mandap and stage design</li><li>Floral and décor direction</li><li>Lighting and sound</li><li>Stationery and signage</li><li>Sangeet and entertainment</li></ul></div>
+      <div class="sec-head"><span class="label">05 · Guest experience and hospitality</span><h2 class="h2">Every guest, looked after</h2><p class="muted">From landing to leaving: room blocks, an arrival desk, transfers, itineraries and a WhatsApp helpdesk, with particular care for elders.</p></div>
+      <div><h3 class="label">Includes</h3><ul class="incl"><li>Room blocks and hotel liaison</li><li>An airport arrival desk</li><li>Transfers to the hotel and every venue</li><li>Personal guest itineraries</li><li>A guest WhatsApp helpdesk</li><li>Comfort planning for elders</li></ul></div>
     </article>
     <article class="svc">
-      <div class="sec-head"><span class="label">Contingency</span><h2 class="h2">Calm, whatever the weather</h2><p class="muted">Plans for weather, power and vendor no-shows, built from decades of live events, and a team on the ground running every moment.</p></div>
-      <div><h3 class="label">What’s included</h3><ul class="incl"><li>Weather backup spaces and cover</li><li>Power backup and generators</li><li>Standby vendors</li><li>On-site team ratios</li><li>An event control room</li><li>Day-of run-of-show management</li></ul></div>
+      <div class="sec-head"><span class="label">06 · Photography, films and on-ground management</span><h2 class="h2">Calm on the day, and a record of it</h2><p class="muted">Photographers and filmmakers briefed on every ritual, and a team on the ground with plans for weather, power and vendor no-shows, built from decades of live events.</p></div>
+      <div><h3 class="label">Includes</h3><ul class="incl"><li>Photography and film coverage</li><li>Shot lists for every ceremony</li><li>On-site team ratios</li><li>An event control room</li><li>Weather and power backup</li><li>Day-of run-of-show management</li></ul></div>
     </article>
   </section>
 
   <section class="band">
+    <div class="sec-head"><span class="label">The guest journey</span><h2 class="h2">From the first invitation to the last farewell</h2></div>
+    <div class="steps six">
+      <div class="step"><span class="label">01</span><h3>Invitation</h3><p>Save-the-dates and invitations, sent on time.</p></div>
+      <div class="step"><span class="label">02</span><h3>Travel</h3><p>Itineraries, travel guidance and a WhatsApp line.</p></div>
+      <div class="step"><span class="label">03</span><h3>Arrival</h3><p>A welcome desk waiting at the airport.</p></div>
+      <div class="step"><span class="label">04</span><h3>Stay</h3><p>Room blocks, care for elders and a helpdesk on call.</p></div>
+      <div class="step"><span class="label">05</span><h3>Celebration</h3><p>Transfers to every function, and back again.</p></div>
+      <div class="step"><span class="label">06</span><h3>Departure</h3><p>Transfers home, with nothing left to chance.</p></div>
+    </div>
+  </section>
+
+  <section class="band statement" style="padding-top:0">
+    <i class="mono orn" aria-hidden="true"></i>
+    <span class="label">Ceremonies, done right.</span>
+    <h2 class="big">Every ritual, in its proper order.</h2>
+    <p class="lede">Pandit and ritual coordination, family-role planning and a run-of-show for each ceremony, with gentle guidance for guests new to Indian traditions. Both families’ customs are honoured, with room for your own touch.</p>
+  </section>
+
+  <section class="band" id="meaning" style="padding-top:0">
+    <div class="sec-head"><span class="label">The meaning behind the moment</span><h2 class="h2">Four traditions, four ways to say I do</h2></div>
+    <div class="rites">
+      <article><span class="label">Hindu</span><h3>Saptapadi</h3><p>Seven steps taken together around the sacred fire, each one a vow.</p></article>
+      <article><span class="label">Sikh</span><h3>Laavan</h3><p>Four rounds of the Guru Granth Sahib as the four hymns of the Laavan are sung.</p></article>
+      <article><span class="label">Muslim</span><h3>Nikah</h3><p>The marriage contract, offered and accepted before witnesses.</p></article>
+      <article><span class="label">Parsi</span><h3>Ara Antar</h3><p>A cloth held between the couple is lowered, and they see each other as husband and wife.</p></article>
+    </div>
+    <p class="muted small rites-note">We work with priests and elders from each tradition, so every ceremony follows your family’s practice.</p>
+  </section>
+
+  <section class="band statement" style="padding-top:0">
+    <span class="label">Behind every function.</span>
+    <p class="big">Flowers checked against the design at dawn. Power tested before the first guest arrives. Sound checked with every band and officiant. The weather call made days ahead. Vendors tracked against the run-of-show, and every guest counted out and counted back.</p>
+  </section>
+
+  <section class="band split" id="standard" style="padding-top:0">
+    <div class="sec-head"><span class="label">Our promise in writing</span><h2 class="h2">The Unify Standard</h2><p class="muted">A named checklist attached to every proposal, so a quarter century of Markcom experience becomes a promise you can hold us to.</p></div>
+    <ul class="incl">
+      <li>Written timelines for every event</li>
+      <li>Backup plans for weather, power and vendors</li>
+      <li>Defined on-site team ratios</li>
+      <li>Itemised, written quotes in US dollars</li>
+      <li>A vetted vendor network</li>
+      <li>A run-of-show for every ceremony</li>
+      <li>Weekly updates by WhatsApp and video</li>
+    </ul>
+  </section>
+
+  <section class="band" style="padding-top:0">
     <div class="sec-head"><span class="label">The Unify way</span><h2 class="h2">You’re in America. We’re in India.</h2></div>
     <ol class="tz">
       <li><span class="when">While you sleep in New Jersey</span><p>Florists arrive in Udaipur for the mandap fitting.</p></li>
@@ -323,40 +400,6 @@
       <li><span class="when">Through your working day</span><p>Room blocks are confirmed and contracts signed.</p></li>
       <li><span class="when">When you get home</span><p>Your weekly video update is waiting.</p></li>
     </ol>
-  </section>
-
-  <section class="band" style="padding-top:0">
-    <div class="sec-head"><span class="label">The guest journey</span><h2 class="h2">From the first flight to the last farewell</h2></div>
-    <div class="steps five">
-      <div class="step"><span class="label">01</span><h3>Before travel</h3><p>Itineraries, travel guidance and a WhatsApp line.</p></div>
-      <div class="step"><span class="label">02</span><h3>Arrival</h3><p>A welcome desk waiting at the airport.</p></div>
-      <div class="step"><span class="label">03</span><h3>Transfers</h3><p>To the hotel, and to every function.</p></div>
-      <div class="step"><span class="label">04</span><h3>The stay</h3><p>Room blocks, care for elders and a helpdesk on call.</p></div>
-      <div class="step"><span class="label">05</span><h3>Departure</h3><p>Transfers home, with nothing left to chance.</p></div>
-    </div>
-  </section>
-
-  <section class="band" style="padding-top:0">
-    <div class="sec-head"><span class="label">The ceremonies</span><h2 class="h2">Days of celebration, each with its own rhythm</h2></div>
-    <div class="values five">
-      <div><h3>Mehndi</h3><p>Henna, music and the first gathering.</p></div>
-      <div><h3>Haldi</h3><p>Turmeric, blessings and laughter.</p></div>
-      <div><h3>Sangeet</h3><p>An evening of song and dance.</p></div>
-      <div><h3>The wedding</h3><p>Vows beneath the mandap.</p></div>
-      <div><h3>Reception</h3><p>A final evening with every guest.</p></div>
-    </div>
-  </section>
-
-  <section class="band" style="padding-top:0">
-    <div class="sec-head"><span class="label">Behind every function</span><h2 class="h2">What your planner actually does</h2></div>
-    <div class="values">
-      <div><h3>Flowers</h3><p>Every delivery checked against the design, at dawn.</p></div>
-      <div><h3>Power</h3><p>Backup tested before each function begins.</p></div>
-      <div><h3>Sound</h3><p>Checks with every band, DJ and officiant.</p></div>
-      <div><h3>Weather</h3><p>The call made days ahead, with a plan for either way.</p></div>
-      <div><h3>Vendors</h3><p>Arrivals tracked against the run-of-show.</p></div>
-      <div><h3>Guests</h3><p>Every transfer counted out, and counted back.</p></div>
-    </div>
   </section>
 </div></div>
 
@@ -484,7 +527,7 @@
 
   <section class="band quiz-band" id="quiz" style="padding-top:0">
     <div class="split">
-      <div class="sec-head"><span class="label">Not sure where?</span><h2 class="h2">Find your destination in four questions</h2><p class="muted">The quiz suggests the places that suit you, and a planner follows up with a shortlist.</p></div>
+      <div class="sec-head"><span class="label">Not sure where?</span><h2 class="h2">Find your destination in six questions</h2><p class="muted">Each destination is scored on season, setting, scale, feel and family roots. Your closest match shows straight away; add your email to see the rest, and a planner follows up with a venue shortlist.</p></div>
       <form class="quiz" id="quizForm" novalidate>
         <fieldset><legend><span class="label">01</span>How many guests will travel?</legend>
           <div class="chips">
@@ -512,7 +555,23 @@
             <label><input type="radio" name="setting" value="heritage">A heritage home</label>
           </div>
         </fieldset>
-        <fieldset><legend><span class="label">04</span>What budget band feels right?</legend>
+        <fieldset><legend><span class="label">04</span>How should it feel?</legend>
+          <div class="chips">
+            <label><input type="radio" name="feel" value="royal">Royal and grand</label>
+            <label><input type="radio" name="feel" value="relaxed">Relaxed, by the sea</label>
+            <label><input type="radio" name="feel" value="intimate">Intimate and green</label>
+            <label><input type="radio" name="feel" value="homecoming">A homecoming</label>
+          </div>
+        </fieldset>
+        <fieldset><legend><span class="label">05</span>Where are your family’s roots?</legend>
+          <div class="chips">
+            <label><input type="radio" name="from" value="north">North India</label>
+            <label><input type="radio" name="from" value="west">West India</label>
+            <label><input type="radio" name="from" value="south">South India</label>
+            <label><input type="radio" name="from" value="any">It doesn’t matter</label>
+          </div>
+        </fieldset>
+        <fieldset><legend><span class="label">06</span>What budget band feels right?</legend>
           <div class="chips">
             <label><input type="radio" name="band" value="Intimate">Intimate</label>
             <label><input type="radio" name="band" value="Classic">Classic</label>
@@ -521,7 +580,7 @@
             <label><input type="radio" name="band" value="">Not sure yet</label>
           </div>
         </fieldset>
-        <button type="submit" class="link">See my destinations <span class="ar">→</span></button>
+        <button type="submit" class="link">See my matches <span class="ar">→</span></button>
         <div class="quiz-out" id="quizOut" role="status" aria-live="polite"></div>
       </form>
     </div>
@@ -645,6 +704,26 @@
       <figure><blockquote class="draft">[Testimonial, in the client’s own words.]</blockquote><figcaption class="label draft">[Name] · [City]</figcaption></figure>
       <figure><blockquote class="draft">[Testimonial, in the client’s own words.]</blockquote><figcaption class="label draft">[Name] · [City]</figcaption></figure>
     </div>
+  </section>
+</div></div>
+
+<!-- ═════════ GALLERY ═════════ -->
+<div class="view" id="v-gallery"><div class="wrap">
+  <section class="page-head">
+    <span class="label">Gallery</span>
+    <h1>Moments we’ve created</h1>
+    <p>Décor, rituals, families and venues. Photographs and films arrive with the first celebrations.</p>
+  </section>
+  <section class="band" style="padding-top:0">
+    <div class="gfilter chips" role="group" aria-label="Filter the gallery">
+      <button type="button" aria-pressed="true" data-k="All">All</button>
+      <button type="button" aria-pressed="false" data-k="Décor">Décor</button>
+      <button type="button" aria-pressed="false" data-k="Rituals">Rituals</button>
+      <button type="button" aria-pressed="false" data-k="Families">Families</button>
+      <button type="button" aria-pressed="false" data-k="Venues">Venues</button>
+      <button type="button" aria-pressed="false" data-k="Films">Films</button>
+    </div>
+    <div class="masonry" data-gallery id="galleryGrid"></div>
   </section>
 </div></div>
 
@@ -836,13 +915,48 @@
     <img src="assets/logo/unify-lockup.svg?v=10" alt="Unify Events &amp; Experiences" style="width:150px">
     <p>Come home to say I&nbsp;do.</p>
   </div>
-  <div><h4>Explore</h4><ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#destinations">Destinations</a></li><li><a href="#process">How we work</a></li><li><a href="#work">Our work</a></li><li><a href="#investment">Investment</a></li></ul></div>
+  <div><h4>Explore</h4><ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#destinations">Destinations</a></li><li><a href="#process">How we work</a></li><li><a href="#work">Our work</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#investment">Investment</a></li></ul></div>
   <div><h4>Contact</h4><ul><li><a href="#enquire">Enquire</a></li><li class="sel draft">[name@unify.com]</li><li class="sel draft">[+1 ___ ___ ____]</li><li>WhatsApp <span class="sel draft">[+1 ___ ___ ____]</span></li><li class="muted">Consultations offered in US and Indian hours</li></ul></div>
   <div><h4>Invitation</h4><ul><li><button id="replay">Open the invitation again</button></li><li><a href="#terms">Terms</a></li></ul></div>
   <div class="legal"><span>© 2026 Unify · Events &amp; Experiences · A Markcom company</span><span class="draft">Prototype · draft copy · film: Jal Mahal, Jaipur</span></div>
 </div></footer>
 </div><!-- /sheet -->
 </main>
-<script src="assets/js/main.js?v=10"></script>
+
+<!-- Floating Enquire tab + side panel -->
+<button class="enq-fab" id="enqFab" aria-controls="enqPanel" aria-expanded="false">Enquire</button>
+<div class="panel-scrim" id="enqScrim" hidden></div>
+<aside class="panel" id="enqPanel" role="dialog" aria-modal="true" aria-labelledby="enqPanelH" hidden>
+  <button class="panel-close" id="enqClose">Close</button>
+  <div class="panel-body">
+    <span class="label">Consultations in US and Indian hours</span>
+    <h2 id="enqPanelH">Book a discovery call</h2>
+    <p class="muted">Tell us who you are and when suits you. A planner replies to arrange the call.</p>
+    <form class="enq quick" id="enqQuick" novalidate>
+      <label class="full">Your names<input id="q-name" name="names" autocomplete="name" placeholder="e.g. Riya &amp; Karan" required></label>
+      <label class="full">Email<input id="q-email" name="email" type="email" autocomplete="email" required></label>
+      <fieldset class="full"><legend>Preferred call hours</legend>
+        <div class="chips">
+          <label><input type="radio" name="qhours" value="US" checked>US hours</label>
+          <label><input type="radio" name="qhours" value="India">Indian hours</label>
+        </div>
+      </fieldset>
+      <label class="full">Anything we should know?<textarea id="q-msg" name="message" rows="3"></textarea></label>
+      <button type="submit" class="link full">Request a call <span class="ar">→</span></button>
+      <p class="note full" id="quickNote" role="status"></p>
+    </form>
+    <a class="link" href="#enquire" id="enqFull">Prefer the full form <span class="ar">→</span></a>
+  </div>
+</aside>
+
+<!-- Fullscreen gallery viewer -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Gallery viewer" hidden>
+  <button class="lb-close" id="lbClose">Close</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">←</button>
+  <figure class="lb-fig"><div class="lb-stage" id="lbStage"></div><figcaption><span id="lbCap"></span><span class="label" id="lbCount"></span></figcaption></figure>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next">→</button>
+</div>
+
+<script src="assets/js/main.js?v=11"></script>
 </body>
 </html>
